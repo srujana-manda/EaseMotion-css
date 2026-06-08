@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    padding: 3rem;
+    background: #0b0b14; /* deeper dark like screenshot */
+    font-family: Inter, Arial, sans-serif;
+    color: #ffffff;
+  }
+  
+  /* Container */
+  .demo-container {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  /* Headings */
+  h1 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .demo-description {
+    color: #9ca3af;
+    margin-bottom: 2rem;
+  }
+  
+  /* GRID */
+  .card-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* CARD */
+  .card-demo-grid .ease-card {
+    background: #161621;
+    border: 1px solid #2a2a3a;
+    border-radius: 14px;
+  
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+  
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    transition: all 0.25s ease;
+  }
+  
+  /* Hover */
+  .card-demo-grid .ease-card:hover {
+    transform: translateY(-4px);
+    border-color: #3b3b55;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* HEADER */
+  .ease-card-header {
+    margin-bottom: 1.2rem;
+  }
+  
+  /* TITLE */
+  .ease-card-title {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  /* SUBTITLE */
+  .ease-card-subtitle {
+    color: #a1a1aa;
+    margin: 0.4rem 0 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* BODY */
+  .ease-card-body {
+    flex: 1;
+  }
+  
+  .ease-card-body p {
+    color: #cbd5e1;
+    line-height: 1.7;
+  }
+  
+  /* FOOTER */
+  .ease-card-footer {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2a3a;
+  }
+  
+  /* BUTTON BASE (FIXED) */
+  .ease-btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+  
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+  }
+  
+  /* BUTTON COLORS */
+  .ease-btn-primary {
+    background: #6d5efc;
+    color: #fff;
+  }
+  
+  .ease-btn-success {
+    background: #22c55e;
+    color: #fff;
+  }
+  
+  .ease-btn-danger {
+    background: #ef4444;
+    color: #fff;
+  }
+  
+  /* BUTTON HOVER */
+  .ease-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+  
+  /* BADGES */
+  .ease-badge {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+    display: inline-block;
+    letter-spacing: 0.3px;
+    font-weight: 700;
+  }
+  
+  /* BADGE COLORS (LIGHT STYLE) */
+  .ease-badge-primary {
+    background: rgba(109, 94, 252, 0.15);
+    color: #6d5efc;
+    border: 1px solid rgba(109, 94, 252, 0.35);
+  }
+  
+  .ease-badge-success {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.35);
+  }
+  
+  .ease-badge-danger {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.35);
+  }
