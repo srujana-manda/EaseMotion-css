@@ -1,0 +1,26 @@
+<div class="code-container">
+    <pre id="codeBlock">
+  .ease-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+    </pre>
+  
+    <button id="copyBtn" class="copy-btn">
+      Copy CSS
+    </button>
+  </div>
+  
+  <script>
+  const btn = document.getElementById("copyBtn");
+  const code = document.getElementById("codeBlock");
+  
+  btn.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(code.innerText);
+  
+    btn.textContent = "Copied!";
+  
+    setTimeout(() => {
+      btn.textContent = "Copy CSS";
+    }, 2000);
+  });
+  </script>

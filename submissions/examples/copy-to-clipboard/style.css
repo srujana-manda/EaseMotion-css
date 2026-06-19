@@ -1,0 +1,23 @@
+.code-container {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  pre {
+    background: #f4f4f4;
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  .copy-btn {
+    margin-top: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .copy-btn:hover {
+    opacity: 0.9;
+  }
