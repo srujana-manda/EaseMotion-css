@@ -38,7 +38,6 @@ These variables allow developers to customize the animation timing, easing, and 
 - Firefox
 - Edge
 - Safari
-
 ## Why EaseMotion CSS?
 
 This component provides a lightweight, reusable, animation-first modal with zero JavaScript while maintaining accessibility and responsiveness.

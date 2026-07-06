@@ -175,7 +175,6 @@ body {
     .actions {
         flex-direction: column;
     }
-
     .secondary-btn,
     .primary-btn,
     .open-btn {
