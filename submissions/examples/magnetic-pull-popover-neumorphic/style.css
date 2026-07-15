@@ -1,0 +1,131 @@
+:root {
+    --pull-distance: 14px;
+    --scale-factor: 1.05;
+    --animation-duration: 0.35s;
+    --animation-easing: cubic-bezier(.22,1,.36,1);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: Arial, sans-serif;
+    background: #e0e5ec;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .magnetic-popover {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+  }
+  
+  
+  /* Trigger button */
+  
+  .magnetic-trigger {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 20px;
+  
+    background: #e0e5ec;
+    color: #333;
+  
+    font-size: 16px;
+    cursor: pointer;
+  
+    box-shadow:
+      8px 8px 16px #a3b1c6,
+      -8px -8px 16px #ffffff;
+  
+    transition:
+      transform var(--animation-duration)
+      var(--animation-easing),
+      box-shadow var(--animation-duration)
+      var(--animation-easing);
+  }
+  
+  
+  .magnetic-trigger:hover,
+  .magnetic-trigger:focus-visible {
+  
+    transform:
+      translateY(calc(var(--pull-distance) * -1))
+      scale(var(--scale-factor));
+  
+    box-shadow:
+      4px 4px 10px #a3b1c6,
+      -4px -4px 10px #ffffff;
+  }
+  
+  
+  /* Popover */
+  
+  .popover-content {
+  
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+  
+    width: 280px;
+    padding: 22px;
+  
+    transform:
+      translateX(-50%)
+      translateY(20px)
+      scale(.9);
+  
+    opacity: 0;
+    pointer-events: none;
+  
+    border-radius: 24px;
+  
+    background: #e0e5ec;
+  
+    box-shadow:
+      10px 10px 20px #a3b1c6,
+      -10px -10px 20px #ffffff;
+  
+  
+    transition:
+      opacity var(--animation-duration)
+      var(--animation-easing),
+  
+      transform var(--animation-duration)
+      var(--animation-easing);
+  }
+  
+  
+  .magnetic-popover:hover .popover-content,
+  .magnetic-popover:focus-within .popover-content {
+  
+    opacity: 1;
+    pointer-events: auto;
+  
+    transform:
+      translateX(-50%)
+      translateY(0)
+      scale(1);
+  }
+  
+  
+  .popover-content h2 {
+    margin-top: 0;
+  }
+  
+  
+  @media(max-width:600px){
+  
+    .popover-content {
+      width: 220px;
+    }
+  
+  }
