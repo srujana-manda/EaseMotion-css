@@ -1,0 +1,65 @@
+:root {
+    /* Colors */
+    --bg-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-color: #ffffff;
+    --accent-color: #38bdf8;
+  
+    /* Animation */
+    --duration: 0.35s;
+    --easing: ease;
+    --scale: 1.05;
+    --translate: 8px;
+  
+    /* Layout */
+    --radius: 12px;
+    --padding: 14px 28px;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--bg-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popover-btn {
+    position: relative;
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--radius);
+    background: var(--surface-color);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all var(--duration) var(--easing);
+  }
+  
+  .popover {
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration) var(--easing);
+  }
+  
+  .popover::after {
+    content: "";
+    position: absolute;
+  }
+  
+  
