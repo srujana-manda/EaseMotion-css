@@ -1,0 +1,234 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --background: #080b18;
+    --text: #ffffff;
+    --muted: rgba(255, 255, 255, 0.7);
+    --particle: #8b5cf6;
+    --particle-light: #38bdf8;
+  }
+  
+  body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+  }
+  
+  .particle-scene {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    isolation: isolate;
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(139, 92, 246, 0.14),
+        transparent 45%
+      );
+  }
+  
+  /* Particle base */
+  .particle {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--particle);
+    box-shadow:
+      0 0 10px var(--particle),
+      0 0 25px var(--particle-light);
+    opacity: 0;
+    animation:
+      shimmer 5s ease-in-out infinite,
+      float 7s ease-in-out infinite;
+  }
+  
+  /* Different particle positions */
+  .particle-1 {
+    top: 15%;
+    left: 15%;
+    animation-delay: 0s;
+  }
+  
+  .particle-2 {
+    top: 30%;
+    left: 75%;
+    animation-delay: 0.7s;
+  }
+  
+  .particle-3 {
+    top: 70%;
+    left: 20%;
+    animation-delay: 1.4s;
+  }
+  
+  .particle-4 {
+    top: 80%;
+    left: 80%;
+    animation-delay: 2.1s;
+  }
+  
+  .particle-5 {
+    top: 20%;
+    left: 50%;
+    animation-delay: 2.8s;
+  }
+  
+  .particle-6 {
+    top: 55%;
+    left: 90%;
+    animation-delay: 3.5s;
+  }
+  
+  .particle-7 {
+    top: 85%;
+    left: 45%;
+    animation-delay: 4.2s;
+  }
+  
+  .particle-8 {
+    top: 45%;
+    left: 8%;
+    animation-delay: 4.9s;
+  }
+  
+  .particle-9 {
+    top: 10%;
+    left: 85%;
+    animation-delay: 1.8s;
+  }
+  
+  .particle-10 {
+    top: 65%;
+    left: 60%;
+    animation-delay: 3.2s;
+  }
+  
+  /* Gradient shimmer animation */
+  @keyframes shimmer {
+    0%,
+    100% {
+      opacity: 0.15;
+      transform: scale(0.6);
+      filter: hue-rotate(0deg);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.4);
+      filter: hue-rotate(80deg);
+    }
+  }
+  
+  /* Floating movement */
+  @keyframes float {
+    0%,
+    100% {
+      margin-top: 0;
+    }
+  
+    50% {
+      margin-top: -35px;
+    }
+  }
+  
+  .content {
+    position: relative;
+    z-index: 2;
+    width: min(500px, 90%);
+    padding: 2.5rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.35),
+      inset 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .label {
+    display: inline-block;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  
+  h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2rem, 7vw, 3.5rem);
+    background: linear-gradient(
+      90deg,
+      #ffffff,
+      var(--particle-light),
+      var(--particle),
+      #ffffff
+    );
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: text-shimmer 4s linear infinite;
+  }
+  
+  p {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  
+  @keyframes text-shimmer {
+    to {
+      background-position: 250% center;
+    }
+  }
+  
+  /* Dark/light mode compatibility */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --background: #eef2ff;
+      --text: #111827;
+      --muted: #475569;
+    }
+  
+    .particle-scene {
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(139, 92, 246, 0.12),
+          transparent 45%
+        );
+    }
+  
+    .content {
+      background: rgba(255, 255, 255, 0.5);
+      border-color: rgba(30, 41, 59, 0.12);
+    }
+  }
+  
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .particle,
+    h1 {
+      animation: none;
+      opacity: 0.7;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .content {
+      padding: 2rem 1.5rem;
+    }
+  }
